@@ -14,28 +14,28 @@ const desks = [
 export default function ContactPage() {
   return (
     <EditableSiteShell>
-      <main className="bg-[#f7f4ef] text-[#111]">
-        <section className="border-b border-black bg-white">
-          <div className="mx-auto max-w-[var(--editable-container)] px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-            <p className="text-xs font-black uppercase tracking-[0.28em] text-[#c92f2f]">{pagesContent.contact.eyebrow}</p>
-            <h1 className="editorial-brand mt-4 max-w-5xl text-6xl font-black leading-[0.92] tracking-[-0.055em] sm:text-8xl">{pagesContent.contact.title}</h1>
-            <p className="mt-6 max-w-2xl border-l-4 border-[#c92f2f] pl-5 text-base font-semibold leading-8 text-black/65">{pagesContent.contact.description}</p>
+      <main className="soft-grid bg-[var(--slot4-page-bg)] px-4 py-10 text-[#171829] sm:px-6 lg:py-14">
+        <section className="mx-auto max-w-[1120px]">
+          <div className="overflow-hidden rounded-[2rem] bg-[linear-gradient(135deg,#2600d4,#3b00f5_58%,#2100a8)] p-7 text-white shadow-[0_22px_60px_rgba(48,0,190,.22)] sm:p-10 lg:p-12">
+            <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#ffd45a]">{pagesContent.contact.eyebrow}</p>
+            <h1 className="mt-4 max-w-4xl text-4xl font-black leading-[0.96] tracking-[-0.055em] sm:text-5xl lg:text-6xl">{pagesContent.contact.title}</h1>
+            <p className="mt-5 max-w-2xl border-l-4 border-[#ff5a5a] pl-5 text-sm font-semibold leading-7 text-white/72">{pagesContent.contact.description}</p>
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-[var(--editable-container)] border-x border-black bg-white lg:grid-cols-[0.72fr_1.28fr]">
-          <aside className="border-b border-black bg-[#171717] text-white lg:border-b-0 lg:border-r">
+        <section className="mx-auto mt-5 grid max-w-[1120px] gap-5 lg:grid-cols-[0.74fr_1.26fr]">
+          <aside className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
             {desks.map((desk, index) => (
-              <div key={desk.title} className="border-b border-white/25 p-7 last:border-b-0 sm:p-9">
-                <div className="flex items-center justify-between"><desk.icon className="h-5 w-5 text-[#f34a43]" /><span className="text-xs font-black text-white/45">0{index + 1}</span></div>
-                <h2 className="editorial-serif mt-6 text-3xl font-black">{desk.title}</h2>
-                <p className="mt-3 text-sm leading-7 text-white/65">{desk.body}</p>
+              <div key={desk.title} className="rounded-[1.35rem] bg-white p-5 shadow-[0_14px_38px_rgba(35,36,55,.06)] ring-1 ring-[#ebeaff] transition hover:-translate-y-1 hover:shadow-[0_18px_48px_rgba(48,0,190,.13)]">
+                <div className="flex items-center justify-between"><desk.icon className="h-5 w-5 text-[#ff5a5a]" /><span className="text-xs font-black text-[#3b00f5]/35">0{index + 1}</span></div>
+                <h2 className="mt-5 text-lg font-black leading-tight tracking-[-.03em]">{desk.title}</h2>
+                <p className="mt-3 text-sm leading-6 text-[#66677a]">{desk.body}</p>
               </div>
             ))}
           </aside>
-          <div className="p-6 sm:p-10 lg:p-14">
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#c92f2f]">Send a message</p>
-            <h2 className="editorial-serif mt-3 text-4xl font-black">{pagesContent.contact.formTitle}</h2>
+          <div className="rounded-[1.5rem] bg-white p-6 shadow-[0_16px_45px_rgba(35,36,55,.07)] ring-1 ring-[#ebeaff] sm:p-8 lg:p-10">
+            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#ff5a5a]">Send a message</p>
+            <h2 className="mt-3 text-3xl font-black tracking-[-.04em] sm:text-4xl">{pagesContent.contact.formTitle}</h2>
             <EditableContactLeadForm />
           </div>
         </section>
