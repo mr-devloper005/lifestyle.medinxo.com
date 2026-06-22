@@ -12,18 +12,26 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function LoginPage() {
   return (
     <EditableSiteShell>
-      <main className="bg-[#f7f4ef] text-[#111]">
-        <section className="mx-auto grid min-h-[calc(100vh-12rem)] max-w-[var(--editable-container)] border-x border-black bg-white lg:grid-cols-[1.08fr_0.92fr]">
-          <div className="flex flex-col justify-center border-b border-black bg-[#c92f2f] p-8 text-white sm:p-12 lg:border-b-0 lg:border-r lg:p-16">
-            <p className="text-xs font-black uppercase tracking-[0.28em]">{pagesContent.auth.login.badge}</p>
-            <h1 className="editorial-brand mt-5 max-w-xl text-6xl font-black leading-[0.92] tracking-[-0.055em] sm:text-8xl">{pagesContent.auth.login.title}</h1>
-            <p className="mt-6 max-w-lg text-sm font-semibold leading-8 text-white/75">{pagesContent.auth.login.description}</p>
+      <main className="soft-grid bg-[var(--slot4-page-bg)] px-4 py-10 text-[#171829] sm:px-6 lg:py-14">
+        <section className="mx-auto grid max-w-[1060px] overflow-hidden rounded-[2rem] bg-white shadow-[0_22px_60px_rgba(35,36,55,.1)] ring-1 ring-[#ebeaff] lg:grid-cols-[1.08fr_0.92fr]">
+          <div className="relative flex min-h-[360px] flex-col justify-center overflow-hidden bg-[linear-gradient(135deg,#2600d4,#3b00f5_58%,#2100a8)] p-8 text-white sm:p-10 lg:p-12">
+            <div className="absolute right-8 top-10 h-24 w-24 rounded-full bg-[#ffd45a]/20 blur-2xl" />
+            <div className="absolute bottom-[-4rem] left-[-2rem] h-52 w-52 rounded-full bg-[#ff5a5a]/25 blur-3xl" />
+            <div className="relative">
+              <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#ffd45a]">{pagesContent.auth.login.badge}</p>
+              <h1 className="mt-4 max-w-xl text-4xl font-black leading-[0.96] tracking-[-0.055em] sm:text-5xl">{pagesContent.auth.login.title}</h1>
+              <p className="mt-5 max-w-lg text-sm font-semibold leading-7 text-white/75">{pagesContent.auth.login.description}</p>
+              <div className="mt-7 rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur">
+                <p className="text-[10px] font-black uppercase tracking-[.2em] text-white/55">Member workspace</p>
+                <p className="mt-2 text-sm leading-6 text-white/78">Continue managing submissions and browsing the publication surface.</p>
+              </div>
+            </div>
           </div>
-          <div className="flex flex-col justify-center p-7 sm:p-12 lg:p-16">
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#c92f2f]">Member access</p>
-            <h2 className="editorial-serif mt-3 text-4xl font-black">{pagesContent.auth.login.formTitle}</h2>
+          <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
+            <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#ff5a5a]">Member access</p>
+            <h2 className="mt-3 text-3xl font-black tracking-[-.04em] sm:text-4xl">{pagesContent.auth.login.formTitle}</h2>
             <EditableLocalLoginForm />
-            <p className="mt-5 border-t border-black pt-5 text-sm text-black/65">New here? <Link href="/signup" className="font-black text-[#c92f2f] underline-offset-4 hover:underline">{pagesContent.auth.login.createCta}</Link></p>
+            <p className="mt-5 border-t border-[#ebeaff] pt-5 text-sm text-[#66677a]">New here? <Link href="/signup" className="font-black text-[#ff5a5a] underline-offset-4 hover:underline">{pagesContent.auth.login.createCta}</Link></p>
           </div>
         </section>
       </main>

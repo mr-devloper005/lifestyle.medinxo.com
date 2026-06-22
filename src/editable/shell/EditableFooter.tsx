@@ -11,15 +11,15 @@ export function EditableFooter() {
   const { session, logout } = useEditableLocalAuthSession()
 
   return (
-    <footer className="border-t-8 border-[var(--slot4-accent)] bg-black text-white">
-      <div className="mx-auto max-w-[1440px] px-4 py-14 sm:px-6 lg:px-10 lg:py-20">
+    <footer className="bg-white px-4 pb-8 pt-16 text-white sm:px-6">
+      <div className="mx-auto max-w-[1320px] rounded-[2.2rem] bg-[linear-gradient(135deg,#2500b8,#3b00f5_55%,#2100a8)] px-6 py-12 shadow-[0_25px_70px_rgba(48,0,190,.2)] sm:px-10 lg:px-16 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_.7fr_.7fr]">
           <div>
-            <Link href="/" className="editorial-brand text-5xl font-black text-[var(--slot4-accent)] sm:text-6xl">{SITE_CONFIG.name}</Link>
+            <Link href="/" className="editorial-brand text-3xl font-black text-white sm:text-4xl">{SITE_CONFIG.name}</Link>
             <p className="mt-6 max-w-xl text-sm leading-7 text-white/62">{globalContent.footer?.description || SITE_CONFIG.description}</p>
-            <form action="/signup" className="mt-8 flex max-w-xl border border-white/35">
-              <input name="email" type="email" placeholder="Email for newsroom updates" className="min-w-0 flex-1 bg-transparent px-4 py-4 text-sm outline-none placeholder:text-white/40" />
-              <button className="bg-[var(--slot4-accent)] px-5 text-xs font-black uppercase tracking-[.14em]">Subscribe</button>
+            <form action="/signup" className="mt-8 flex max-w-xl rounded-xl bg-white p-1">
+              <input name="email" type="email" placeholder="Work email" className="min-w-0 flex-1 bg-transparent px-4 py-3 text-sm text-[#222] outline-none" />
+              <button className="rounded-lg bg-[#ff5a5a] px-5 text-xs font-black">Join updates</button>
             </form>
           </div>
           <div>
@@ -38,7 +38,7 @@ export function EditableFooter() {
           </div>
         </div>
       </div>
-      <div className="border-t border-white/20 px-4 py-5 text-center text-[10px] font-black uppercase tracking-[.18em] text-white/45">© {year} {SITE_CONFIG.name}. Independent media and public information.</div>
+      <div className="px-4 py-5 text-center text-[10px] font-black uppercase tracking-[.18em] text-[#77758f]">© {year} {SITE_CONFIG.name}. Independent media and public information.</div>
     </footer>
   )
 }
